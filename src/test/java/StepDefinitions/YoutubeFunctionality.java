@@ -58,5 +58,7 @@ public class YoutubeFunctionality {
         }
 
         Assert.assertTrue(count > number);
+
+        System.out.println("Completed Tunahan.");
     }
 }
