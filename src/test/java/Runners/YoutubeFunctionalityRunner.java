@@ -12,11 +12,11 @@ import org.testng.annotations.Parameters;
 )
 
 public class YoutubeFunctionalityRunner extends AbstractTestNGCucumberTests {
-    @BeforeClass
-    @Parameters(value = "browser")
-    public void beforeClass(String browserName){
-        ParameterDriver.setThreadDriverName(browserName);
-    }
+//    @BeforeClass
+//    @Parameters(value = "browser")
+//    public void beforeClass(String browserName){
+//        ParameterDriver.setThreadDriverName(browserName);
+//    }
 
 
 }
