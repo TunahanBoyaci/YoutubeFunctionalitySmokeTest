@@ -1,18 +1,15 @@
 package Runners;
 
-import Utilities.ParameterDriver;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 
 @CucumberOptions (
-        features = "src/test/java/FutureFiles/YoutubeFunctionality.feature",
+        features = "src/test/java/FutureFiles",
         glue = "StepDefinitions",
         plugin = {"pretty", "html:target/site/cucmber-pretty", "json:target/cucumber/cucumber.json"}
 )
 
-public class YoutubeFunctionalityRunner extends AbstractTestNGCucumberTests {
+public class Runner extends AbstractTestNGCucumberTests {
 //    @BeforeClass
 //    @Parameters(value = "browser")
 //    public void beforeClass(String browserName){

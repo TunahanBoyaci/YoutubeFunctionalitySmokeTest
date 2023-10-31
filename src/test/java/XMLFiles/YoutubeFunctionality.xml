@@ -6,7 +6,7 @@
         <parameter name="browser" value="chrome"></parameter>
 
         <classes>
-            <class name="Runners.YoutubeFunctionalityRunner"></class>
+            <class name="Runners.Runner"></class>
         </classes>
     </test>
 </suite>
