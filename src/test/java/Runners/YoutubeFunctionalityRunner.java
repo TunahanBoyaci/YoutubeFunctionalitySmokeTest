@@ -8,7 +8,8 @@ import org.testng.annotations.Parameters;
 
 @CucumberOptions (
         features = "src/test/java/FutureFiles/YoutubeFunctionality.feature",
-        glue = "StepDefinitions"
+        glue = "StepDefinitions",
+        plugin = {"pretty", "html:target/site/cucmber-pretty", "json:target/cucumber/cucumber.json"}
 )
 
 public class YoutubeFunctionalityRunner extends AbstractTestNGCucumberTests {
