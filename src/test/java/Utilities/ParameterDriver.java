@@ -5,6 +5,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -45,12 +46,12 @@ public class ParameterDriver {
 //                    threadDriver.set(new ChromeDriver(options));
 //                    break;
 
-//                    ChromeOptions options = new ChromeOptions();
-//                    if (!runningFromIntellij()) {
-//                        options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
-//                    }
-//                    threadDriver.set(new ChromeDriver(options));
-                    threadDriver.set(new ChromeDriver()); // delete
+                    ChromeOptions options = new ChromeOptions();
+                    if (!runningFromIntellij()) { // Run in memory again, but when Jenkins runs
+                    options.addArguments("--headless", "--disable-dev-shm-usage", "--disable-gpu", "--window-size=1400,2400");
+                    }
+                    threadDriver.set(new ChromeDriver(options));
+//                    threadDriver.set(new ChromeDriver());
                     break;
             }
             threadDriver.get().manage().window().maximize();
@@ -58,7 +59,7 @@ public class ParameterDriver {
         return threadDriver.get();
     }
 
-    public static void setThreadDriverName(String browserName){
+    public static void setThreadDriverName(String browserName) {
         threadDriverName.set(browserName);
     }
 
@@ -70,7 +71,7 @@ public class ParameterDriver {
         }
     }
 
-    public static boolean runningFromIntellij(){
+    public static boolean runningFromIntellij() {
         String classPath = System.getProperty("java.class.path");
         return classPath.contains("idea_rt.jar");
     }
